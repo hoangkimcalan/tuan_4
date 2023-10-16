@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+    <div>
+        <div class="flex overflow-hidden h-full w-full bg-gray-50 justify-center items-center">
+            <div id="main-content" class="h-full w-full bg-gray-50 px-56 py-12">
+                <main>
+                    <div class="pt-6 px-4">
+                        <div class="w-full grid grid-cols-4 gap-4">
+                            <div>
+                                <div class="bg-white shadow rounded-lg">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="h-32">
+                                            <img class="object-cover rounded-lg transition duration-500 cursor-pointer"
+                                                src="./bg.png" />
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <img class="fixed ml-8 object-cover h-32 w-32 rounded-full" src="./bg.png" />
+                                    </div>
+                                    <div class="p-4 gap-2 block grid mt-36">
+                                        <p>MS: 20200069</p>
+                                        <p>Họ tên: Hoàng Kim Cả</p>
+                                        <p>Lớp: Khoa học máy tính 02-K65</p>
+                                        <p>Email: ca.hk200069@sis.hust.edu.vn</p>
+                                        <p>Email cá nhân: hoangkimca123@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white shadow rounded-lg">
+                                    <div class="p-4 gap-2 block grid mt-2">
+                                        <p>GVCN: giang.phamthiphuong@hust.edu.vn
+                                            Trường/Viện/Khoa: Trường Công nghệ Thông tin và Truyền thông</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="bg-white shadow rounded-lg col-span-3">
+                                <div class="flex p-2 h-full">
+                                    <div x-data="setup()">
+                                        <ul class="flex my-4">
+                                            <template x-for="(tab, index) in tabs" :key="index">
+                                                <li class="cursor-pointer py-2 px-4 border"
+                                                    :class="activeTab===index ? 'text-blue-500 border-blue-500' : ''"
+                                                    @click="activeTab = index" x-text="tab"></li>
+                                            </template>
+                                        </ul>
+                                        <div class="bg-white mx-auto">
+                                            <div x-show="activeTab===0">
+                                                <div class="mt-4 mb-4">
+                                                    <strong>Thông tin cá nhân</strong>
+                                                    <div class="pl-4 mt-2">
+                                                        <div class="grid grid-cols-3">
+                                                            <div>
+                                                                <p>Ngày sinh: 11/03/2002</p>
+                                                                <p>Số CMTND: 044202001702</p>
+                                                                <p>Dân tộc: KINH</p>
+                                                                <p>Ngày vào Đoàn:</p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Ngày sinh: 11/03/2002</p>
+                                                                <p>Số CMTND: 044202001702</p>
+                                                                <p>Dân tộc: KINH</p>
+                                                                <p>Ngày vào Đoàn:</p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Ngày sinh: 11/03/2002</p>
+                                                                <p>Số CMTND: 044202001702</p>
+                                                                <p>Dân tộc: KINH</p>
+                                                                <p>Ngày vào Đoàn:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p>Đối tượng chính sách</p>
+                                                            <p>Số thẻ bảo hiểm: 4420092864</p>
+                                                            <p>Địa chỉ thường trú: XÃ LỘC NINH, THÀNH PHỐ ĐỒNG HỚI, TỈNH
+                                                                QUẢNG
+                                                                BÌNH</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-4 mb-4">
+                                                    <strong>Thông tin gia đình</strong>
+                                                    <div class="pl-4 mt-2">
+                                                        <strong>Họ và tên cha:</strong>
+                                                        <div class="grid grid-cols-3">
+                                                            <div>
+                                                                <p>Dân tộc: </p>
+                                                                <p>Nơi làm việc:</p>
+                                                                <p>Địa chỉ thường trú:</p>
+                                                                <p>Liên hệ: </p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Năm sinh: </p>
+                                                                <p>Tôn giáo:</p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Quốc tịch: </p>
+                                                                <p>Nghề nghiệp: </p>
+                                                            </div>
+                                                        </div>
+                                                        <strong>Họ và tên mẹ:</strong>
+                                                        <div class="grid grid-cols-3">
+                                                            <div>
+                                                                <p>Dân tộc: </p>
+                                                                <p>Nơi làm việc:</p>
+                                                                <p>Địa chỉ thường trú:</p>
+                                                                <p>Liên hệ: </p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Năm sinh: </p>
+                                                                <p>Tôn giáo:</p>
+                                                            </div>
+                                                            <div>
+                                                                <p>Quốc tịch: </p>
+                                                                <p>Nghề nghiệp: </p>
+                                                            </div>
+                                                        </div>
+                                                        <strong>Thông tin người thân khác:</strong>
+                                                        <div class="grid grid-cols-2">
+                                                            <strong>Thuộc hộ:</strong>
+                                                            <strong>Số sổ:</strong>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div x-show="activeTab===1">
+                                                <div>
+                                                    <p>Quyết định số: nhập học 2020</p>
+                                                    <p>Thời gian thực hiện: 10.10.2020</p>
+                                                    <p> Trạng thái: Đã thực hiện lớp,CTĐT</p>
+                                                </div>
+                                            </div>
+                                            <div x-show="activeTab===2"></div>
+                                            <div x-show="activeTab===3">0335799757</div>
+                                            <div x-show="activeTab===4">Nhận xét của giáo viên, cán bộ dành cho sinh
+                                                viên
+                                            </div>
+                                            <div x-show="activeTab===5"></div>
+                                            <div x-show="activeTab===6"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function setup() {
+        return {
+            activeTab: 0,
+            tabs: [
+                "Lý lịch",
+                "Quyết định",
+                "Khen thưởng",
+                "Liên hệ",
+                "Nhận xét",
+                "Hoạt động tham gia",
+            ]
+        };
+    };
+</script>
+<!-- HoangKimca20200069 -->
